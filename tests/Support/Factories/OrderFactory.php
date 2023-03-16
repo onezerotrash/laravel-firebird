@@ -1,9 +1,9 @@
 <?php
 
-namespace HarryGulliford\Firebird\Tests\Support\Factories;
+namespace onezerotrash\Firebird\Tests\Support\Factories;
 
-use HarryGulliford\Firebird\Tests\Support\Models\Order;
-use HarryGulliford\Firebird\Tests\Support\Models\User;
+use onezerotrash\Firebird\Tests\Support\Models\Order;
+use onezerotrash\Firebird\Tests\Support\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class OrderFactory extends Factory

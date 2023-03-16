@@ -1,12 +1,12 @@
 <?php
 
-namespace HarryGulliford\Firebird\Query\Grammars;
+namespace onezerotrash\Firebird\Query\Grammars;
 
 use Illuminate\Database\Query\Builder;
 use Illuminate\Database\Query\Grammars\Grammar;
 use Illuminate\Support\Str;
 
-class FirebirdGrammar extends Grammar
+class FirebirdGrammarDialect3 extends Grammar
 {
     /**
      * The components that make up a select clause.
@@ -169,4 +169,5 @@ class FirebirdGrammar extends Grammar
             'as aggregate', 'as "aggregate"', parent::compileAggregate($query, $aggregate)
         );
     }
+
 }

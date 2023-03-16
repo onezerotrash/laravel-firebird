@@ -1,9 +1,9 @@
 <?php
 
-namespace HarryGulliford\Firebird\Tests\Support;
+namespace onezerotrash\Firebird\Tests\Support;
 
-use HarryGulliford\Firebird\Tests\Support\Factories\OrderFactory;
-use HarryGulliford\Firebird\Tests\Support\Factories\UserFactory;
+use onezerotrash\Firebird\Tests\Support\Factories\OrderFactory;
+use onezerotrash\Firebird\Tests\Support\Factories\UserFactory;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;

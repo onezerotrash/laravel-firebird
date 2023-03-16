@@ -1,9 +1,9 @@
 <?php
 
-namespace HarryGulliford\Firebird\Tests;
+namespace onezerotrash\Firebird\Tests;
 
-use HarryGulliford\Firebird\Tests\Support\MigrateDatabase;
-use HarryGulliford\Firebird\Tests\Support\Models\Order;
+use onezerotrash\Firebird\Tests\Support\MigrateDatabase;
+use onezerotrash\Firebird\Tests\Support\Models\Order;
 use Illuminate\Support\Facades\DB;
 
 class PaginationTest extends TestCase

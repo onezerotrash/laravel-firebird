@@ -1,6 +1,6 @@
 <?php
 
-namespace HarryGulliford\Firebird;
+namespace onezerotrash\Firebird;
 
 use Illuminate\Database\Connectors\Connector;
 use Illuminate\Database\Connectors\ConnectorInterface;
@@ -50,6 +50,10 @@ class FirebirdConnector extends Connector implements ConnectorInterface
 
         if (isset($charset)) {
             $dsn .= "charset={$charset};";
+        }
+
+        if (isset($dialect)) {
+            $dsn .= "dialect={$dialect};";
         }
 
         return $dsn;

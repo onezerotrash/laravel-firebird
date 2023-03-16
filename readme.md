@@ -25,7 +25,7 @@ composer require onezerotrash/laravel-firebird
 _The package will automatically register itself._
 
 Declare the connection within your `config/database.php` file by using `firebird` as the
-driver:
+driver (use `PDO::ATTR_CASE => PDO::CASE_LOWER`):
 ```php
 'connections' => [
 
@@ -39,6 +39,13 @@ driver:
         'charset'  => env('DB_FIREBIRD_CHARSET', 'UTF8'),
         'dialect'  => env('DB_FIREBIRD_DIALECT', '3'),
         'role'     => env('DB_FIREBIRD_ROLE', 'NONE'),
+        'options' => [
+            PDO::ATTR_CASE => PDO::CASE_LOWER,
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_ORACLE_NULLS => PDO::NULL_NATURAL,
+            PDO::ATTR_STRINGIFY_FETCHES => false,
+            PDO::ATTR_EMULATE_PREPARES => false
+        ]
     ],
 
 ],

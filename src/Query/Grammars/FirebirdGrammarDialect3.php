@@ -153,21 +153,4 @@ class FirebirdGrammarDialect3 extends Grammar
         return $procedure.' ('.$this->parameterize($values).')';
     }
 
-    /**
-     * Compile an aggregated select clause.
-     *
-     * @param  \Illuminate\Database\Query\Builder  $query
-     * @param  array  $aggregate
-     * @return string
-     */
-    protected function compileAggregate(Builder $query, $aggregate)
-    {
-        // Wrap `aggregate` in double quotes to ensure the resultset returns the
-        // column name as a lowercase string. This resolves compatibility with
-        // the framework's paginator.
-        return Str::replaceLast(
-            'as aggregate', 'as "aggregate"', parent::compileAggregate($query, $aggregate)
-        );
-    }
-
 }

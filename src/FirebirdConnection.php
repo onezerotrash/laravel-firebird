@@ -3,7 +3,8 @@
 namespace onezerotrash\Firebird;
 
 use onezerotrash\Firebird\Query\Builder as FirebirdQueryBuilder;
-use onezerotrash\Firebird\Query\Grammars\FirebirdGrammar as FirebirdQueryGrammar;
+use onezerotrash\Firebird\Query\Grammars\FirebirdGrammarDialect1 as FirebirdQueryGrammarDialect1;
+use onezerotrash\Firebird\Query\Grammars\FirebirdGrammarDialect3 as FirebirdQueryGrammarDialect3;
 use onezerotrash\Firebird\Query\Processors\FirebirdProcessor as FirebirdQueryProcessor;
 use onezerotrash\Firebird\Schema\Builder as FirebirdSchemaBuilder;
 use onezerotrash\Firebird\Schema\Grammars\FirebirdGrammar as FirebirdSchemaGrammar;
@@ -18,7 +19,11 @@ class FirebirdConnection extends DatabaseConnection
      */
     protected function getDefaultQueryGrammar()
     {
-        return new FirebirdQueryGrammar;
+        if ($this->getDialectVersion() == '1') {
+            return new FirebirdQueryGrammarDialect1;
+        }
+        
+        return new FirebirdQueryGrammarDialect3;
     }
 
     /**
@@ -77,5 +82,19 @@ class FirebirdConnection extends DatabaseConnection
     public function executeProcedure($procedure, array $values = [])
     {
         return $this->query()->fromProcedure($procedure, $values)->get();
+    }
+
+    /**
+     * Get Firebird dialect version that should be used when compiling queries.
+     *
+     * @return string
+     */
+    protected function getDialectVersion()
+    {
+        if (! array_key_exists('dialect', $this->config)) {
+            return '3';
+        }
+
+        return $this->config['dialect'];
     }
 }

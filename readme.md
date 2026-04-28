@@ -1,4 +1,4 @@
-# Firebird for Laravel 8.x, 9.x, 10.x
+# Firebird for Laravel 8.x, 9.x, 10.x, 11.x
 
 [![Latest Stable Version](https://poser.pugx.org/onezerotrash/laravel-firebird/v/stable)](https://packagist.org/packages/onezerotrash/laravel-firebird)
 [![Total Downloads](https://poser.pugx.org/onezerotrash/laravel-firebird/downloads)](https://packagist.org/packages/onezerotrash/laravel-firebird)
@@ -9,9 +9,9 @@ Package is a fork from [harrygulliford/laravel-firebird](https://github.com/harr
 
 ## Version Support
 
-- **PHP:** 7.4, 8.0, 8.1, 8.2
-- **Laravel:** 8.x, 9.x, 10.x
-- **Firebird:** 2.5, 3.0, 4.0
+- **PHP:** 7.4, 8.0, 8.1, 8.2, 8.3, 8.4
+- **Laravel:** 8.x, 9.x, 10.x, 11.x
+- **Firebird:** 2.5, 3.0, 4.0, 5.0
 - **Firebird Dialect:** 1, 3
 
 ## Installation
